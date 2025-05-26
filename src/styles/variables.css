@@ -1,0 +1,29 @@
+:root {
+  /* Font family */
+  --font-primary: 'Inter', sans-serif;
+
+  /* Font sizes - desktop */
+  --fs-body: 16px;
+  --fs-body-large: 20px;
+  --fs-h1: 42px;
+
+  /* Font sizes - mobile */
+  --fs-body-mobile: 16px;
+  --fs-body-large-mobile: 18px;
+  --fs-h1-mobile: 32px;
+  --fs-special: 8px;
+
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+
+  /* Colors */
+  --primary-black: #1D1D1D;
+  --primary-white: #FFFFFF;
+  --primary-grey: #EAEAE8;
+  --label-bestseller: #D9D6B0;
+  --label-limited: #D4B0D9;
+}
+
