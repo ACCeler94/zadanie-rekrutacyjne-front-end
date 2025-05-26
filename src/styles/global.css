@@ -1,0 +1,39 @@
+@import './variables.css';
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--fs-body);
+  line-height: 140%;
+  letter-spacing: -1%;
+  font-weight: var(--fw-medium);
+  padding: 0 42px;
+  background-color: var(--primary-white);
+}
+
+.body--large {
+  font-size: var(--fs-body-large);
+  font-weight: var(--fw-semi-bold);
+  line-height: 120;
+  letter-spacing: normal;
+}
+
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  line-height: 140;
+  letter-spacing: -2%;
+}
