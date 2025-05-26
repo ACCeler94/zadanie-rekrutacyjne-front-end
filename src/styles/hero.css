@@ -1,0 +1,18 @@
+.hero {
+  padding-top: 80px;
+  height: calc(100vh - 88px);
+  position: relative;
+}
+
+.hero__logo {
+  height: var(--hero-logo-height);
+  margin-bottom: var(--hero-logo-margin);
+}
+
+.hero__photo {
+  width: 100%;
+  max-height: calc(100% - var(--hero-logo-height) - var(--hero-logo-margin));
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}

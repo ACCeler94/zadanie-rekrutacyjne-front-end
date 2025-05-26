@@ -25,5 +25,10 @@
   --primary-grey: #EAEAE8;
   --label-bestseller: #D9D6B0;
   --label-limited: #D4B0D9;
+
+  /* Others */
+  --hero-logo-height: 138px;
+  --hero-logo-margin: 42px;
 }
+
 

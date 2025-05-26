@@ -21,12 +21,13 @@ body {
   font-weight: var(--fw-medium);
   padding: 0 42px;
   background-color: var(--primary-white);
+  margin: 0;
 }
 
 .body--large {
   font-size: var(--fs-body-large);
   font-weight: var(--fw-semi-bold);
-  line-height: 120;
+  line-height: 120%;
   letter-spacing: normal;
 }
 
@@ -34,6 +35,11 @@ body {
 h1 {
   font-size: var(--fs-h1);
   font-weight: var(--fw-bold);
-  line-height: 140;
+  line-height: 140%;
   letter-spacing: -2%;
+}
+
+
+section {
+  margin-bottom: 96px;
 }
