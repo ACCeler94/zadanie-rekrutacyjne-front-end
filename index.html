@@ -35,6 +35,31 @@
     </a>
   </header>
 
+  <main>
+    <section class="hero">
+      <img class="hero__logo" src="/images/hero_logo.svg" alt="Hero Forma Logo">
+      <picture>
+        <source type="image/webp"
+          srcset="/images/hero-400.webp 400w, /images/hero-800.webp 800w, /images/hero-1200.webp 1200w, /images/hero-1920.webp 1920w"
+          sizes="(max-width: 576px) 400px,
+           (max-width: 768px) 600px,
+           (max-width: 992px) 900px,
+           (max-width: 1200px) 1200px,
+           1920px">
+        <!-- Fallback for older browsers -->
+        <img src="/images/hero-1200.jpg" class="hero__photo" alt="Man with an ice axe climbing a steep icy mountain."
+          loading="lazy"
+          srcset="/images/hero-400.jpg 400w, /images/hero-800.jpg 800w, /images/hero-1200.jpg 1200w, /images/hero-1920.jpg 1920w"
+          sizes="(max-width: 576px) 400px,
+           (max-width: 768px) 600px,
+           (max-width: 992px) 900px,
+           (max-width: 1200px) 1200px,
+           1920px">
+      </picture>
+    </section>
+
+  </main>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 
