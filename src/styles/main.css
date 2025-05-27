@@ -1,4 +1,9 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/scrollbar';
+
 @import './variables.css';
 @import './global.css';
 @import './header.css';
 @import './hero.css';
+@import './featured.css';
