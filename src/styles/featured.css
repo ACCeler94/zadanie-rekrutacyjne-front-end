@@ -24,6 +24,10 @@
   padding: 30px;
 }
 
+.featured__photo {
+  max-width: 100%;
+}
+
 .swiper-slide {
   cursor: pointer;
   transition: opacity var(--transition-duration) ease;

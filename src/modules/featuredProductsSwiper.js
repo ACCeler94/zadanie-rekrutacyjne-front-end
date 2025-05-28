@@ -28,7 +28,7 @@ export function initFeaturedProductsSwiper(products) {
       </div>
       <picture>
         <source srcset="${product.photoUrl}.webp" type="image/webp">
-        <img src="${product.photoUrl}.jpg" alt="${product.name}" loading="lazy"/>
+        <img src="${product.photoUrl}.jpg" class="featured__photo" alt="${product.name}" loading="lazy"/>
       </picture>
     </div>
     <h2>${product.name}</h2>
