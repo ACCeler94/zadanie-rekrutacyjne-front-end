@@ -25,7 +25,6 @@ initCustomDropdown(dropdownEl, (value) => {
   // Reset page counter and refetch products when page size changes
   pageSize = value
   pageToFetch = 1
-  productList.innerHTML = ''
   fetchProducts({ pageSize, pageToFetch, isFetching, isError, allPages })
 });
 
