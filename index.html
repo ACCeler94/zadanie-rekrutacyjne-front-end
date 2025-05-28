@@ -66,7 +66,6 @@
         <div class="swiper-wrapper">
           <!-- Here are product cards rendered -->
         </div>
-
         <div class="swiper-button-next">
           <img src="/src/assets/icons/slider_arrow.svg" class="swiper__arrow right" alt="Slider arrow right">
         </div>
@@ -75,9 +74,25 @@
         </div>
         <div class="swiper-scrollbar"></div>
       </div>
-
       </div>
     </section>
+
+    <section id="products">
+      <div class="pageSizeMenu__wrapper">
+        <span class="pageSizeMenu__text">NUMBERS OF PRODUCTS PER PAGE</span>
+        <div class="pageSizeMenu__dropdown" id="pageSizeDropdown">
+          <div class="pageSizeMenu__dropdown--selected">
+            <span class="pageSizeMenu__dropdown--value">14</span>
+            <div class="pageSizeMenu__dropdown--arrow"></div>
+          </div>
+          <ul class="pageSizeMenu__dropdown--options">
+            <li data-value="14">14</li>
+            <li data-value="24">24</li>
+            <li data-value="36">36</li>
+          </ul>
+        </div>
+    </section>
+
   </main>
 
   <script type="module" src="/src/main.js"></script>

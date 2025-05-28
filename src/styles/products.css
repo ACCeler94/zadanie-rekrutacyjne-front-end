@@ -1,0 +1,70 @@
+.pageSizeMenu__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.pageSizeMenu__text {
+  padding-top: 8px;
+  margin-right: 24px;
+}
+
+.pageSizeMenu__dropdown {
+  position: relative;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
+  width: 80px;
+  /* white border set up so it is invisible but the width does not change when the border is shown when opened */
+  border: 1px solid var(--primary-white);
+}
+
+.pageSizeMenu__dropdown.open {
+  border: 1px solid var(--primary-grey);
+  border-radius: 6px;
+  background-color: var(--primary-white);
+}
+
+.pageSizeMenu__dropdown--selected {
+  margin: 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid var(--primary-black);
+}
+
+/* Chevron used as a background to prevent displaying alt text */
+.pageSizeMenu__dropdown--arrow {
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  background: url("/src/assets/icons/chevron_down.svg") no-repeat center;
+  background-size: contain;
+  display: inline-block;
+}
+
+.pageSizeMenu__dropdown--options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  text-align: center;
+}
+
+.pageSizeMenu__dropdown--options li {
+  margin: 0 12px;
+  padding: 6px 0;
+  cursor: pointer;
+  border-bottom: 1px solid var(--primary-grey);
+}
+
+.pageSizeMenu__dropdown--options li:last-of-type {
+  border: none;
+  padding-bottom: 12px;
+}
+
+.pageSizeMenu__dropdown--options li:hover {
+  background-color: #f0f0f0;
+}
+
+.pageSizeMenu__dropdown.open .pageSizeMenu__dropdown--options {
+  display: block;
+}
