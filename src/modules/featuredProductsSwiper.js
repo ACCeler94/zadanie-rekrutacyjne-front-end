@@ -31,7 +31,7 @@ export function initFeaturedProductsSwiper(products) {
         <img src="${product.photoUrl}.jpg" class="featured__photo" alt="${product.name}" loading="lazy"/>
       </picture>
     </div>
-    <h2>${product.name}</h2>
+    <h2 class="body--large">${product.name}</h2>
     <p>€${new Intl.NumberFormat('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(product.price)}</p>`;
     container.appendChild(slide);
   });
