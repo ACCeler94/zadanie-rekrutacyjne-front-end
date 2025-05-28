@@ -1,6 +1,7 @@
 import { featuredProductsData } from './modules/featuredProductsData';
 import { initFeaturedProductsSwiper } from './modules/featuredProductsSwiper';
 import fetchProducts from './modules/fetchProducts';
+import openModal from './modules/openModal';
 import { initCustomDropdown } from './modules/pageSizeMenu';
 
 
@@ -29,4 +30,22 @@ initCustomDropdown(dropdownEl, (value) => {
 });
 
 // Initial fetch
-await fetchProducts({ pageSize, pageToFetch, isFetching, isError, allPages })
+fetchProducts({ pageSize, pageToFetch, isFetching, isError, allPages })
+
+// Add event listener to open modal
+productList.addEventListener('click', (event) => {
+  const card = event.target.closest('.product__card');
+  if (!card || !productList.contains(card)) return;
+
+  // Get data from the card's dataset
+  const src = card.dataset.src;
+  const alt = card.dataset.alt;
+  const id = card.dataset.id;
+
+  openModal({ src, alt, id });
+})
+
+// Add event listener to close modal
+const modal = document.getElementById('product__modal');
+document.querySelector('.modal__close').addEventListener('click', () => modal.close())
+
