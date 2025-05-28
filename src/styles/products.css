@@ -70,3 +70,24 @@
 .pageSizeMenu__dropdown.open .pageSizeMenu__dropdown--options {
   display: block;
 }
+
+#product__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 24px;
+  row-gap: 24px;
+}
+
+.product__card {
+  background-color: var(--primary-grey);
+  border-radius: 6px;
+  padding: 32px;
+}
+
+.product__image--wrapper {
+  position: relative;
+}
+
+.product__image--wrapper img {
+  max-width: 100%;
+}
