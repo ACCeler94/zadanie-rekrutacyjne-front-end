@@ -21,7 +21,7 @@ initCustomDropdown(dropdownEl, async (value) => {
   productsState.pageSize = value;
   productsState.pageToFetch = 1;
   productsState.bannerInserted = false;
-  productsList.innerHTML = '';
+  productList.innerHTML = '';
 
   await fetchProducts();
 });
