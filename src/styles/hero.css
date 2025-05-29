@@ -16,3 +16,33 @@
   object-position: center;
   border-radius: 8px;
 }
+
+
+@media (max-width: 1200px){
+  .hero {
+    max-height: calc(100vh - 88px);
+    height: auto;
+  }
+ }
+
+ @media (max-width: 768px) {
+  .hero {
+  padding-top: 64px;
+  height: calc(100vh - 72px);
+  }
+ }
+
+ @media (max-width: 576px) {
+  .hero {
+      max-height: none;
+  }
+
+  .hero__photo {
+    height: calc(100% - var(--hero-logo-height) - var(--hero-logo-margin));
+  }
+ }
+
+
+ @media (max-width: 426px) {
+
+ }

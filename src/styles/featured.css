@@ -1,5 +1,6 @@
 .section__title {
   margin: 0;
+  margin-top: 4px;
 }
 
 .swiper {
@@ -119,3 +120,12 @@
   pointer-events: none;
 }
 
+ @media (max-width: 426px) {
+  .swiper {
+    margin-top: 32px;
+  }
+
+  .swiper-wrapper {
+    margin-bottom: 32px;
+  }
+ }

@@ -89,3 +89,15 @@ nav a:hover::after {
 .user img {
   margin-right: 12px;
 }
+
+@media (max-width: 1200px){
+  nav a {
+    margin: 0 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 24px 0;
+  }
+}
