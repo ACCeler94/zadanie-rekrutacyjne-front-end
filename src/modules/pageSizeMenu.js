@@ -11,6 +11,7 @@ export function initCustomDropdown(dropdownElement, onChange) {
 
   selected.addEventListener("click", () => {
     dropdownElement.classList.toggle("open");
+    selected.classList.toggle("open");
     updateHiddenOption(valueSpan.textContent);
   });
 
@@ -18,6 +19,7 @@ export function initCustomDropdown(dropdownElement, onChange) {
     option.addEventListener("click", () => {
       valueSpan.textContent = option.dataset.value;
       dropdownElement.classList.remove("open");
+      selected.classList.remove("open");
       updateHiddenOption(option.dataset.value);
       if (onChange) onChange(option.dataset.value);
     });
@@ -26,6 +28,7 @@ export function initCustomDropdown(dropdownElement, onChange) {
   document.addEventListener("click", (e) => {
     if (!dropdownElement.contains(e.target)) {
       dropdownElement.classList.remove("open");
+      selected.classList.remove("open");
     }
   });
 
