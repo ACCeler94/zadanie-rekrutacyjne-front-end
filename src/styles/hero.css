@@ -1,6 +1,7 @@
 .hero {
   padding-top: 80px;
   height: calc(100vh - 88px);
+  min-height: 500px;
   position: relative;
 }
 
@@ -21,20 +22,21 @@
 @media (max-width: 1200px){
   .hero {
     max-height: calc(100vh - 88px);
-    height: auto;
   }
  }
 
  @media (max-width: 768px) {
   .hero {
-  padding-top: 64px;
-  height: calc(100vh - 72px);
+    padding-top: 64px;
+    height: auto;
   }
  }
 
  @media (max-width: 576px) {
   .hero {
-      max-height: none;
+    max-height: none;
+    height: calc(100vh - 72px);
+
   }
 
   .hero__photo {
