@@ -53,6 +53,7 @@
 .pageSizeMenu__dropdown--options {
   list-style: none;
   padding: 0;
+  padding-bottom: 12px;
   margin: 0;
   display: none;
   text-align: center;
@@ -65,9 +66,13 @@
   border-bottom: 1px solid var(--primary-grey);
 }
 
+.pageSizeMenu__dropdown--options li:nth-child(n + 2) {
+  border-bottom: none;
+}
+
 .pageSizeMenu__dropdown--options li:last-of-type {
-  border: none;
-  padding-bottom: 12px;
+  border-top: 1px solid var(--primary-grey);
+  border-bottom: none;
 }
 
 .pageSizeMenu__dropdown--options li:hover {
