@@ -38,8 +38,8 @@ export function initFeaturedProductsSwiper(products) {
 
 
   new Swiper('.swiper-container', {
-    slidesPerView: 4,
-    spaceBetween: 24,
+    slidesPerView: 1,
+    spaceBetween: 16,
     loop: false,
     modules: [Navigation, Scrollbar],
     navigation: {
@@ -50,5 +50,17 @@ export function initFeaturedProductsSwiper(products) {
       el: '.swiper-scrollbar',
       hide: false,
     },
+    breakpoints: {
+      1200: {
+        slidesPerView: 4,
+      },
+      800: {
+        slidesPerView: 3,
+      },
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 24
+      }
+    }
   });
 }
