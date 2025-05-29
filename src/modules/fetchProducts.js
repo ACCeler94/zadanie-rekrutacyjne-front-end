@@ -1,22 +1,23 @@
 import renderProducts from './renderProducts';
+import { productsState } from './productsState';
 
+const fetchProducts = async () => {
+  if (productsState.pageToFetch > productsState.allPages || productsState.isFetching) return;
 
-const fetchProducts = async ({ pageSize, pageToFetch, isFetching, isError, allPages }) => {
-  if (pageToFetch > allPages) return
-
-  isFetching = true
+  productsState.isFetching = true;
   try {
-    const res = await fetch(`https://brandstestowy.smallhost.pl/api/random?pageNumber=${pageToFetch}&pageSize=${pageSize}`);
+    const res = await fetch(`https://brandstestowy.smallhost.pl/api/random?pageNumber=${productsState.pageToFetch}&pageSize=${productsState.pageSize}`);
     const { data: products, totalPages, currentPage } = await res.json();
 
-    isFetching = false
-    allPages = totalPages
-    renderProducts(products)
-    pageToFetch = currentPage + 1
+    renderProducts(products);
+
+    productsState.allPages = totalPages;
+    productsState.pageToFetch = currentPage + 1;
   } catch (error) {
-    isError = true
-    isFetching = false
+    productsState.isError = true;
+  } finally {
+    productsState.isFetching = false;
   }
-}
+};
 
 export default fetchProducts;

@@ -1,8 +1,8 @@
+import { productsState } from './productsState';
+
 const productList = document.getElementById('product__grid');
 
 const renderProducts = (products) => {
-  productList.innerHTML = ''; // Reset products and banner
-  let bannerInserted = false;
   for (let i = 0; i < products.length; i++) {
     const product = products[i];
     const id = product.id.toString().padStart(2, '0');
@@ -12,7 +12,7 @@ const renderProducts = (products) => {
     card.dataset.id = id;
     card.dataset.alt = product.text;
     card.dataset.src = product.image;
-    card.style.order = i + 1;
+    card.style.order = product.id // product.id used instead of i to keep items ordered in case of refetch on infinite scroll
 
     card.innerHTML = `
       <div class="product__image--wrapper">
@@ -23,8 +23,7 @@ const renderProducts = (products) => {
 
     productList.appendChild(card);
 
-    // Insert banner after the 5th product (index 4)
-    if (i === 4 && !bannerInserted) {
+    if (i === 4 && !productsState.bannerInserted) {
       const banner = document.createElement('div');
       banner.className = 'product__banner';
       banner.style.order = 6;
@@ -43,7 +42,7 @@ const renderProducts = (products) => {
       `;
 
       productList.appendChild(banner);
-      bannerInserted = true;
+      productsState.bannerInserted = true;
     }
   }
 };

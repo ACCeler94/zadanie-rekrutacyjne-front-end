@@ -3,13 +3,7 @@ import { initFeaturedProductsSwiper } from './modules/featuredProductsSwiper';
 import fetchProducts from './modules/fetchProducts';
 import openModal from './modules/openModal';
 import { initCustomDropdown } from './modules/pageSizeMenu';
-
-
-let pageToFetch = 1;
-let pageSize = 14;
-let isFetching = false;
-let isError = false
-let allPages
+import { productsState } from './modules/productsState';
 
 const productList = document.getElementById('product__grid');
 
@@ -20,16 +14,20 @@ document.addEventListener('DOMContentLoaded', () => initFeaturedProductsSwiper(f
 // Initialize page size menu
 const dropdownEl = document.getElementById("pageSizeDropdown");
 
-initCustomDropdown(dropdownEl, (value) => {
-  if (value === pageSize) return
-  // Reset page counter and refetch products when page size changes
-  pageSize = value
-  pageToFetch = 1
-  fetchProducts({ pageSize, pageToFetch, isFetching, isError, allPages })
+initCustomDropdown(dropdownEl, async (value) => {
+  if (value === productsState.pageSize) return;
+
+  // Reset
+  productsState.pageSize = value;
+  productsState.pageToFetch = 1;
+  productsState.bannerInserted = false;
+  productsList.innerHTML = '';
+
+  await fetchProducts();
 });
 
 // Initial fetch
-fetchProducts({ pageSize, pageToFetch, isFetching, isError, allPages })
+await fetchProducts()
 
 // Add event listener to open modal
 productList.addEventListener('click', (event) => {
@@ -48,3 +46,13 @@ productList.addEventListener('click', (event) => {
 const modal = document.getElementById('product__modal');
 document.querySelector('.modal__close').addEventListener('click', () => modal.close())
 
+
+// Add event listener to load products when scrolled to the bottom (infinite scroll)
+window.addEventListener("scroll", async () => {
+  // Do not run if currently fetching
+  if (productsState.isFetching) return;
+
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    await fetchProducts();
+  }
+});
