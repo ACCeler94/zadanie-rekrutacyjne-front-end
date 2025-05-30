@@ -23,6 +23,7 @@
   justify-content: center;
   border-radius: 6px;
   padding: 30px;
+  aspect-ratio: 1/1;
 }
 
 .featured__photo {
@@ -121,6 +122,10 @@
 }
 
  @media (max-width: 426px) {
+    .swiper__arrow {
+      height: 64px;
+    }
+
   .swiper {
     margin-top: 32px;
   }

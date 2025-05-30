@@ -33,12 +33,13 @@ export function initFeaturedProductsSwiper(products) {
     </div>
     <h2 class="body--large">${product.name}</h2>
     <p>€${new Intl.NumberFormat('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(product.price)}</p>`;
+
     container.appendChild(slide);
   });
 
 
   new Swiper('.swiper-container', {
-    slidesPerView: 1,
+    slidesPerView: 1.1,
     spaceBetween: 16,
     loop: false,
     modules: [Navigation, Scrollbar],
