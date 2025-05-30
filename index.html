@@ -25,7 +25,8 @@
         <span class="logo__text--secondary">IDOMODS &lt;/&gt;</span>
       </a>
     </div>
-    <nav>
+    <!-- Desktop nav -->
+    <nav class="desktop__nav">
       <a href="#">HOME</a>
       <a href="#featured">FEATURED PRODUCTS</a>
       <a href="#products">PRODUCT LISTING</a>
@@ -34,6 +35,29 @@
       <img src="./src/assets/icons/icon-user.svg" alt="User">
       <span>FRONTEND DEVELOPER</span>
     </a>
+
+    <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="sideMenu">
+      <img src=" /src/assets/icons/menu_hamburger.svg" alt="Open side menu">
+      MENU
+    </button>
+    <!-- Side menu nav -->
+    <div id="sideMenu" class="side__menu">
+      <div class="side__menu--header">
+        <img src="./src/assets/icons/icon_forma.svg" alt="Logo Forma" class="logo__icon outline" />
+        <button id="closeSideMenuBtn" class="close__menu-button" aria-label="Close menu">
+          <img src="/src/assets/icons/icon_close.svg" alt="Close side menu">
+          CLOSE
+        </button>
+      </div>
+
+      <nav class="mobile__nav">
+        <a href="#">HOME</a>
+        <a href="#featured">FEATURED PRODUCTS</a>
+        <a href="#products">PRODUCT LISTING</a>
+      </nav>
+    </div>
+    <div id="overlay" class="side__menu--overlay"></div>
+
   </header>
 
   <main>

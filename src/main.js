@@ -6,10 +6,13 @@ import { initCustomDropdown } from './modules/pageSizeMenu';
 import { productsState } from './modules/productsState';
 
 const productList = document.getElementById('product__grid');
+const sideMenu = document.getElementById('sideMenu')
 
-
-// Initialize swiper
-document.addEventListener('DOMContentLoaded', () => initFeaturedProductsSwiper(featuredProductsData))
+// Initialize swiper and side menu styling to prevent animation from playing on load
+document.addEventListener('DOMContentLoaded', () => {
+  sideMenu.classList.add('side__menu--ready')
+  initFeaturedProductsSwiper(featuredProductsData);
+})
 
 // Initialize page size menu
 const dropdownEl = document.getElementById("pageSizeDropdown");
@@ -54,5 +57,31 @@ window.addEventListener("scroll", async () => {
 
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
     await fetchProducts();
+  }
+});
+
+const overlay = document.getElementById('overlay')
+// Add event listener to hamburger menu
+document.getElementById('hamburger').addEventListener('click', () => {
+  sideMenu.classList.add('open');
+  overlay.classList.add('active');
+})
+
+const closeMenu = () => {
+  sideMenu.classList.remove('open');
+  overlay.classList.remove('active');
+}
+
+// Add event listener to close side menu button
+document.getElementById('closeSideMenuBtn').addEventListener('click', closeMenu)
+
+// Add event listener to close menu on overlay click
+overlay.addEventListener('click', closeMenu)
+
+// Close menu if a element is clicked - event delegated to nav
+const mobileNav = document.querySelector('.mobile__nav')
+mobileNav.addEventListener('click', (event) => {
+  if (event.target.tagName === 'A') {
+    closeMenu();
   }
 });

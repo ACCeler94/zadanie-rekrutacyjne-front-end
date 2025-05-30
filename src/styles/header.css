@@ -53,20 +53,20 @@ header a {
   margin-right: 24px;
 }
 
-nav a {
+.desktop__nav a {
   margin: 0 21px;
   position: relative;
 }
 
-nav a:first-of-type {
+.desktop__nav a:first-of-type {
   margin-left: 0;
 }
 
-nav a:last-of-type {
+.desktop__nav a:last-of-type {
   margin-right: 0;
 }
 
-nav a::after {
+.desktop__nav a::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -77,7 +77,7 @@ nav a::after {
   transition: width var(--transition-duration) ease;
 }
 
-nav a:hover::after {
+.desktop__nav a:hover::after {
   width: 100%;
 }
 
@@ -90,9 +90,98 @@ nav a:hover::after {
   margin-right: 12px;
 }
 
+.side__menu {
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  right: 0;
+  min-width: 33%;
+  width: 250px;
+  height: 100vh;
+  padding: 0 16px 0 32px;
+  background: var(--primary-white);
+  transform: translateX(100%); /* Start completely off-screen */
+  transition: transform var(--transition-duration) ease;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.side__menu--ready {
+  visibility: visible;
+}
+
+.side__menu.open {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.side__menu--overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-duration) ease;
+  z-index: 998;
+}
+
+.side__menu--overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hamburger {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.side__menu--header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0;
+  margin-bottom: 80px;
+}
+
+.close__menu-button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.mobile__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+
 @media (max-width: 1200px){
-  nav a {
+  .desktop__nav a {
     margin: 0 14px;
+  }
+}
+
+/* Mobile nav */
+@media (max-width: 1100px){
+  .user {
+    display: none;
+  }
+
+  .desktop__nav {
+    display: none;
+  }
+
+  .logo__text--secondary {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
   }
 }
 

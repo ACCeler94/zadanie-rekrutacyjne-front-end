@@ -44,6 +44,15 @@ section {
   margin-bottom: 96px;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  padding: 0;
+}
+
 
 @media (max-width: 1200px){
   section {
