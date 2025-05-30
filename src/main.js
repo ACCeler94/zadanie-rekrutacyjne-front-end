@@ -5,7 +5,7 @@ import openModal from './modules/openModal';
 import { initCustomDropdown } from './modules/pageSizeMenu';
 import { productsState } from './modules/productsState';
 
-const productList = document.getElementById('product__grid');
+const productList = document.getElementById('productGrid');
 const sideMenu = document.getElementById('sideMenu')
 
 // Initialize swiper and side menu styling to prevent animation from playing on load
@@ -46,7 +46,7 @@ productList.addEventListener('click', (event) => {
 })
 
 // Add event listener to close modal
-const modal = document.getElementById('product__modal');
+const modal = document.getElementById('productModal');
 document.querySelector('.modal__close').addEventListener('click', () => modal.close())
 
 

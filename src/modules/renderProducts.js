@@ -1,6 +1,6 @@
 import { productsState } from './productsState';
 
-const productList = document.getElementById('product__grid');
+const productList = document.getElementById('productGrid');
 
 const renderProducts = (products) => {
   for (let i = 0; i < products.length; i++) {
