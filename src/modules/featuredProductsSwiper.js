@@ -23,8 +23,8 @@ export function initFeaturedProductsSwiper(products) {
     <div class="image__wrapper">
       ${label}
       <div class="heart-wrapper">
-        <img src="/src/assets/icons/icon_favorite.svg" alt="Add to favorites" class="heart-icon outline" />
-        <img src="/src/assets/icons/icon_favorite-filled.svg" alt="Added to favorites" class="heart-icon filled" />
+        <img src="/icons/icon_favorite.svg" alt="Add to favorites" class="heart-icon outline" />
+        <img src="/icons/icon_favorite-filled.svg" alt="Added to favorites" class="heart-icon filled" />
       </div>
       <picture>
         <source srcset="${product.photoUrl}.webp" type="image/webp">

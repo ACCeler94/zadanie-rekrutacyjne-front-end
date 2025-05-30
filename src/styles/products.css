@@ -45,7 +45,7 @@
   width: 24px;
   height: 24px;
   margin-left: 8px;
-  background: url("/src/assets/icons/chevron_down.svg") no-repeat center;
+  background: url("/icons/chevron_down.svg") no-repeat center;
   background-size: contain;
   display: inline-block;
 }

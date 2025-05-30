@@ -26,11 +26,11 @@ initCustomDropdown(dropdownEl, async (value) => {
   productsState.bannerInserted = false;
   productList.innerHTML = '';
 
-  await fetchProducts();
+  fetchProducts();
 });
 
 // Initial fetch
-await fetchProducts()
+fetchProducts()
 
 // Add event listener to open modal
 productList.addEventListener('click', (event) => {
@@ -56,7 +56,7 @@ window.addEventListener("scroll", async () => {
   if (productsState.isFetching) return;
 
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    await fetchProducts();
+    fetchProducts();
   }
 });
 

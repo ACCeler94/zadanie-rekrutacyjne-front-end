@@ -36,7 +36,7 @@ const renderProducts = (products) => {
           </div>
           <a href="#">
               CHECK THIS OUT
-              <img src="/src/assets/icons/chevron_right.svg" alt="Chevron pointing right">
+              <img src="/icons/chevron_right.svg" alt="Chevron pointing right">
           </a>
         </div>
       `;
