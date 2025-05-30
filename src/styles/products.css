@@ -116,7 +116,7 @@
 #productModal {
   border: none;
   padding: 32px;
-  min-height: 60vh;
+  min-height: 55vh;
   min-width: 45vw;
   flex-direction: column;
   border-radius: 6px;
@@ -145,12 +145,12 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .modal__image {
-  max-height: 550px;
-  width: 100%;
+  display: block;
+  max-height: 530px;
+  max-width: 100%;
   object-fit: contain;
 }
 
@@ -259,9 +259,23 @@
     row-gap: 12px;
   }
 
+  #productModal {
+    padding: 16px;
+  }
+
  }
- 
+
  @media (max-width: 426px) {
+  .modal__image--wrapper {
+    overflow: hidden;
+  }
+
+  /* Done in pair with overflow hidden to remove image whitespace without cropping*/
+  .modal__image {
+    max-width: 125%;
+  }
+
+
   #products {
     margin-bottom: 32px;
   }
@@ -299,4 +313,12 @@
     grid-row: span 3;
     padding: 32px 24px;
    }
+ }
+
+ /* Without hardcoding for 360x740 screen modal has 322x418 dimensions, I don't know if the layout should be pixel perfect so hardcoded for safety */
+ @media (max-width: 360px) {
+  #productModal {
+    height: 420px;
+    width: 312px;
+  }
  }
